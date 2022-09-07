@@ -9,13 +9,16 @@ from tqdm import tqdm
 import numpy as np
 import os
 
+# Pascal voc2012着色板，如若需要请替换为其他数据集着色板
 palette = [0, 0, 0, 128, 0, 0, 0, 128, 0, 128, 128, 0, 0, 0, 128, 128, 0, 128, 0, 128, 128, 128, 128, 128,
            64, 0, 0, 192, 0, 0, 64, 128, 0, 192, 128, 0, 64, 0, 128, 192, 0, 128, 64, 128, 128, 192, 128, 128,
            0, 64, 0, 128, 64, 0, 0, 192, 0, 128, 192, 0, 0, 64, 128, 128, 64, 128, 0, 192, 128, 128, 192, 128,
            64, 64, 0, 192, 64, 0, 64, 192, 0, 192, 192, 0]
-threshold = "0.5"
-file_path = "/home/imu_zhengyuan/xjl/eps/PATH/TO/SAVE_{}/voc12_eps/result/cam_png".format(threshold)
-save_path = "./finished_labels_{}".format(threshold)
+
+# 需要转换图像的路径，必填
+file_path = ""
+# 转换完成后的路径，选填，默认保存到当前目录下的【finished_labels】文件夹
+save_path = "./finished_labels"
 
 
 def gen_image(file_name):
